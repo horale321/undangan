@@ -11,10 +11,13 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   background: url('invitation.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-size: 100% 100%; /* ✅ Fill full screen without cropping */
+  background-position: center center;
+  background-repeat: no-repeat;
   color: #111;
   overflow-x: hidden;
 }
+
 
 /* Overlay */
 .overlay {
@@ -43,21 +46,22 @@ body {
   width: 100%;
 }
 
-/* Section wrappers */
 .section-intro,
 .section-details {
   position: relative;
   width: 100vw;
   min-height: 100vh;
   padding: 6rem 3rem;
-  background: rgba(255, 255, 255, 0.85);
-  color: #111;
+  background: transparent; /* Background stays transparent */
+  color: #111; /* ✅ Dark text */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   animation: slideUp 1s ease;
 }
+
+
 
 /* Highlight Box */
 .event-highlight {
