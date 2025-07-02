@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sections[currentSectionIndex].classList.add("active");
   }
   
-  // Listen for mouse wheel scroll
+  // Listen for mouse wheel scroll (for desktop)
   window.addEventListener("wheel", (event) => {
     if (isScrolling || !invitation.classList.contains('show')) return;
 
@@ -60,6 +60,36 @@ document.addEventListener("DOMContentLoaded", function () {
       isScrolling = false;
     }, 1000); // Timeout should be longer than the CSS transition
   });
+
+  // --- NEW: Listen for touch swipe (for mobile) ---
+  let touchstartY = 0;
+  let touchendY = 0;
+  const swipeThreshold = 50; // Minimum distance for a swipe
+
+  window.addEventListener('touchstart', function(event) {
+      touchstartY = event.changedTouches[0].screenY;
+  }, false);
+
+  window.addEventListener('touchend', function(event) {
+      if (isScrolling || !invitation.classList.contains('show')) return;
+      
+      touchendY = event.changedTouches[0].screenY;
+      const swipeDistance = touchendY - touchstartY;
+
+      if (Math.abs(swipeDistance) < swipeThreshold) {
+        return; // Not a long enough swipe
+      }
+
+      isScrolling = true;
+
+      const scrollDirection = touchendY < touchstartY ? 'down' : 'up';
+      changeSection(scrollDirection);
+
+      setTimeout(() => {
+          isScrolling = false;
+      }, 1000); // Match timeout from wheel scroll
+  }, false);
+
 
   // --- Countdown Timer Logic ---
   const eventDate = new Date("2025-07-13T12:00:00+07:00").getTime();
