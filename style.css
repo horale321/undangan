@@ -1,94 +1,94 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+ scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #111; /* Fallback color */
-  color: white;
-  overflow-y: auto; 
+ font-family: 'Poppins', sans-serif;
+ background-color: #111; /* Fallback color */
+ color: white;
+ overflow-y: auto;
 }
 
 p {
-  margin: 0.2rem 0;
-  line-height: 1.6;
-  text-align: justify;
+ margin: 0.2rem 0;
+ line-height: 1.6;
+ text-align: justify;
 }
 
 /* --- OVERLAY --- */
 .overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url('invitation.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  text-align: center;
-  transition: opacity 1s ease-out;
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ background: url('invitation.jpg') no-repeat center center;
+ background-size: cover;
+ color: white;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ z-index: 2000;
+ text-align: center;
+ transition: opacity 1s ease-out;
 }
 
 .overlay.hidden {
-  opacity: 0;
-  pointer-events: none;
+ opacity: 0;
+ pointer-events: none;
 }
 
 .landing-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+ font-family: 'Poppins', sans-serif;
+ font-size: 3rem;
+ margin-bottom: 1.5rem;
+ text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* --- INVITATION & SECTION STYLES --- */
 .invitation {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s ease, visibility 1s;
+ opacity: 0;
+ visibility: hidden;
+ transition: opacity 1s ease, visibility 1s;
 }
 
 .invitation.show {
-  opacity: 1;
-  visibility: visible;
+ opacity: 1;
+ visibility: visible;
 }
 
 .full-page-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  padding: 2rem 1rem;
-  position: relative;
-  
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ width: 100%;
+ padding: 2rem 1rem;
+ position: relative;
+
+ background-repeat: no-repeat;
+ background-position: center center;
+ background-size: cover;
 }
 
 #section-1 { background-image: url('invitation.jpg'); }
 #section-2 { background-image: url('invitation 2.jpg'); }
 #section-3 { background-image: url('gallery.jpg'); }
 #section-4 { background-image: url('location.jpg'); }
-#section-5 { background-image: url('invitation 3.jpg'); } 
+#section-5 { background-image: url('invitation 3.jpg'); }
 
 
 .custom-narrow {
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.25rem;
-  line-height: 1.6;
+ max-width: 750px;
+ margin-left: auto;
+ margin-right: auto;
+ font-size: 1.25rem;
+ line-height: 1.6;
 }
 
 .smaller-title { font-size: 2.5rem; }
@@ -101,111 +101,123 @@ a, i { color: inherit !important; }
 h2.dark-text,
 h4.dark-text,
 p.dark-text {
-  color: #333 !important;
+ color: #333 !important;
 }
 
 /* --- SECTION 2 STYLES --- */
 #section-2 h3 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  line-height: 1.2;
+ font-family: 'Josefin Sans', sans-serif;
+ font-size: 2.2rem;
+ font-weight: 600;
+ letter-spacing: 0.1rem;
+ line-height: 1.2;
 }
 
-/* --- GALLERY STYLES --- */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    margin-top: 1rem;
+/* --- GALLERY CAROUSEL STYLES --- */
+#galleryCarousel {
+ width: 100%;
+ max-width: 500px;
+ margin: 1rem auto;
 }
-.gallery-item {
-    overflow: hidden;
-    border-radius: 0.5rem;
+.carousel-inner {
+ border-radius: 0.75rem;
+ overflow: hidden;
+ aspect-ratio: 1 / 1.1; /* Slightly taller to better fit portrait photos */
+ background-color: rgba(0,0,0,0.2);
+ border: 3px solid white;
 }
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    border: 2px solid white;
-    transition: transform 0.3s ease;
+.carousel-item img {
+ object-fit: contain; /* This prevents cropping */
+ height: 100%;
+ width: 100%;
 }
-.gallery-item img:hover {
-    transform: scale(1.05);
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+ width: 2rem;
+ height: 2rem;
+ background-color: white;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
-.gallery-item:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+ content: '';
+ display: inline-block;
+ width: 1rem;
+ height: 1rem;
+ background-size: 100% 100%;
 }
-.gallery-item:nth-child(2) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+.carousel-control-prev-icon::before {
+ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFD700'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
-.gallery-item:nth-child(3) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+.carousel-control-next-icon::before {
+ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFD700'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
-.gallery-item:nth-child(4) {
-    display: none;
+.carousel-control-prev,
+.carousel-control-next {
+ width: auto;
+ opacity: 1; /* Make sure they are fully visible */
 }
+.carousel-control-prev {
+ margin-left: 0.5rem;
+}
+.carousel-control-next {
+ margin-right: 0.5rem;
+}
+
 
 /* --- LOCATION SECTION STYLES --- */
 .location-block {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+   background: rgba(255, 255, 255, 0.7);
+   border-radius: 0.75rem;
+   padding: 1.5rem;
+   margin-bottom: 2rem;
+   width: 100%;
+   max-width: 500px;
+   margin-left: auto;
+   margin-right: auto;
 }
 .location-block h4 {
-    font-family: 'Josefin Sans', sans-serif;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+   font-family: 'Josefin Sans', sans-serif;
+   margin-bottom: 1rem;
+   font-size: 1.5rem;
 }
 .location-block p {
-    text-align: center;
-    text-wrap: balance;
+   text-align: center;
+   text-wrap: balance;
 }
 
 /* --- OTHER ELEMENTS --- */
 #music-toggle {
-  top: 0; 
-  right: 0; 
-  z-index: 2001;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+ top: 0;
+ right: 0;
+ z-index: 2001;
+ background-color: rgba(0, 0, 0, 0.5);
+ color: white;
+ border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .profile-photo {
-  max-width: 150px;
-  height: auto;
-  border: 4px solid white;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  margin-bottom: 0.5rem;
-  border-radius: 50%;
+ max-width: 150px;
+ height: auto;
+ border: 4px solid white;
+ box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+ margin-bottom: 0.5rem;
+ border-radius: 50%;
 }
 
 .countdown-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
 }
 .countdown-box {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  width: 80px;
+ background: rgba(0, 0, 0, 0.3);
+ padding: 0.5rem 1rem;
+ border-radius: 0.5rem;
+ width: 80px;
 }
 .count-number { font-size: 1.8rem; font-weight: 700; }
 .count-label { font-size: 0.8rem; text-transform: uppercase; }
@@ -213,28 +225,24 @@ p.dark-text {
 
 /* --- MOBILE STYLES --- */
 @media (max-width: 768px) {
-  .landing-title {
-    font-size: 2.5rem;
-  }
-  
-  .full-page-section {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+ .landing-title {
+   font-size: 2.5rem;
+ }
 
-  .custom-narrow {
-    font-size: 1.1rem;
-  }
+ .full-page-section {
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+ }
 
-  .smaller-title {
-    font-size: 2rem;
-  }
+ .custom-narrow {
+   font-size: 1.1rem;
+ }
 
-  #section-2 h3 {
-    font-size: 1.8rem;
-  }
+ .smaller-title {
+   font-size: 2rem;
+ }
 
-  .gallery-grid {
-    height: 300px;
-  }
+ #section-2 h3 {
+   font-size: 1.8rem;
+ }
 }
