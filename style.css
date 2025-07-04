@@ -97,24 +97,12 @@ h1, h2, h3, h4, .fw-bold, .fw-semibold, strong { color: white !important; }
 a, i { color: inherit !important; }
 .btn a, .btn i { color: white !important; }
 
-/* --- DARK TEXT CLASS (Corrected) --- */
-.dark-text,
+/* --- DARK TEXT CLASS --- */
 h2.dark-text,
 h4.dark-text,
 p.dark-text {
   color: #333 !important;
 }
-
-a.btn.dark-text {
-  color: #333 !important;
-  border-color: #333;
-}
-a.btn.dark-text:hover {
-  color: white !important;
-  background-color: #333;
-  border-color: #333;
-}
-
 
 /* --- SECTION 2 STYLES --- */
 #section-2 h3 {
