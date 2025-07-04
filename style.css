@@ -132,6 +132,12 @@ p.dark-text {
 .detail-value {
     text-align: left;
 }
+.grid-separator {
+    grid-column: 1 / -1; /* Make this span all columns */
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
 
 
 /* --- GALLERY CAROUSEL STYLES --- */
