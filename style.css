@@ -28,7 +28,7 @@ p {
   height: 100%;
   background-image: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('invitation.jpg');
+    url('photo0.jpeg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -49,8 +49,8 @@ p {
 }
 
 .landing-photo {
-  max-width: 700px;
-  width: 100%;
+  max-width: 300px;
+  width: 70%;
   height: auto;
   border-radius: 0.75rem;
   border: 4px solid white;
@@ -83,7 +83,7 @@ p {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 2rem 3rem;
   position: relative;
   
   background-repeat: no-repeat;
@@ -147,8 +147,7 @@ p.dark-text {
 .grid-separator {
     grid-column: 1 / -1;
     margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: justify;
 }
 
 
@@ -229,14 +228,15 @@ p.dark-text {
 .countdown-wrapper {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.5rem; /* Reduced gap for smaller screens */
+  width: 100%;
 }
 .countdown-box {
   background: rgba(0, 0, 0, 0.3);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
-  width: 80px;
+  text-align: center;
+  flex: 1; /* This makes the boxes flexible */
 }
 .count-number { font-size: 1.8rem; font-weight: 700; }
 .count-label { font-size: 0.8rem; text-transform: uppercase; }
@@ -249,14 +249,7 @@ p.dark-text {
   }
   
   .full-page-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  /* Added specific padding for section 3 on mobile */
-  #section-3.full-page-section {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   .custom-narrow {
@@ -273,5 +266,13 @@ p.dark-text {
 
   .carousel-inner {
     aspect-ratio: 1 / 1;
+  }
+
+  /* Adjust countdown font for smaller flexible boxes */
+  .count-number {
+    font-size: 1.5rem;
+  }
+  .count-label {
+    font-size: 0.7rem;
   }
 }
