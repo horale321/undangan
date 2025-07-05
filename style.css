@@ -28,7 +28,7 @@ p {
   height: 100%;
   background-image: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('invitation.jpg'); /* Changed from photo0.jpeg */
+    url('invitation.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -230,6 +230,7 @@ p.dark-text {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .countdown-box {
   background: rgba(0, 0, 0, 0.3);
@@ -250,6 +251,12 @@ p.dark-text {
   .full-page-section {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  
+  /* Added specific padding for section 3 on mobile */
+  #section-3.full-page-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .custom-narrow {
